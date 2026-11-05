@@ -25,7 +25,7 @@ window.SITE = {
   // Shown under the bio, separated by "/". Leave "" to hide one.
   links: {
     Email: "mailto:cboned@cvc.uab.cat",
-    CV: "",
+    CV: "assets/cv.pdf",                                 // replace assets/cv.pdf to update
     Scholar: "https://scholar.google.com/citations?hl=en&user=FCb2rY8AAAAJ",
     GitHub: "https://github.com/Bycarkos",
     ORCID: "https://orcid.org/0009-0000-6041-0931",
