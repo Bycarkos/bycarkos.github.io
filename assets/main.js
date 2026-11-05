@@ -50,7 +50,7 @@
   }
 
   // Education / Other
-  [["Education", S.education], ["Other", S.other]].forEach(([name, list]) => {
+  [["Experience", S.experience], ["Teaching & talks", S.talks], ["Education", S.education], ["Other", S.other]].forEach(([name, list]) => {
     if ((list || []).length) {
       out.push(`<h2>${name}</h2><ul class="list">${list.map((r) =>
         `<li><span class="when">${esc(r.when)}</span><span>${r.text}</span></li>`).join("")}</ul>`);
