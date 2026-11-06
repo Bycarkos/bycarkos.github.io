@@ -101,5 +101,6 @@ pre.code {
   .pub { flex-direction: column; gap: 10px; }
   .pub__thumb, .pub__thumb img, .pub__thumb .ph { width: 100%; flex-basis: auto; }
   .pub__thumb .ph { height: 70px; }
+  .pub__thumb img { max-width: 240px; }
   .list li { flex-direction: column; gap: 0; padding: 6px 0; }
 }

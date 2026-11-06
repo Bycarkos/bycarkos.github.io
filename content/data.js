@@ -47,7 +47,7 @@ window.SITE = {
       venue: "arXiv",
       year: 2026,
       featured: true,
-      image: "",
+      image: "assets/img/ssog.jpg",
       summary: "SSoG replaces dense self-attention with a mixture of separable Gaussian kernels: subquadratic, globally Lipschitz, and +2.2–4.1 Top-1 on CIFAR-100 with fewer parameters.",
       page: "papers/ssog/",
       links: { arxiv: "https://arxiv.org/abs/2611.08236", explorer: "papers/ssog/explorer.html" },
