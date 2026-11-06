@@ -6,6 +6,7 @@
   const LINK_LABELS = {
     pdf: "pdf", arxiv: "arXiv", code: "code", doi: "paper", dataset: "dataset",
     slides: "slides", poster: "poster", video: "video", project: "project page",
+    explorer: "interactive explorer",
   };
 
   function authors(list, profile) {

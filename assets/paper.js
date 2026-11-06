@@ -7,7 +7,10 @@
   const here = "papers/" + D.slug + "/";
   const pub = S.publications.find((p) => (p.page || "").replace(/\/?$/, "/") === here) || {};
   const title = D.title || pub.title || "Untitled";
-  const links = Object.entries(Object.assign({}, pub.links, D.extraLinks)).filter(([, v]) => v)
+  // Links in data.js are relative to the homepage; extraLinks are relative to this folder.
+  const fromRoot = (v) => /^(https?:|mailto:|#|\/)/.test(v) ? v : "../../" + v;
+  const rootLinks = Object.fromEntries(Object.entries(pub.links || {}).filter(([, v]) => v).map(([k, v]) => [k, fromRoot(v)]));
+  const links = Object.entries(Object.assign({}, rootLinks, D.extraLinks)).filter(([, v]) => v)
     .map(([k, v]) => `<a href="${esc(v)}">${esc(LINK_LABELS[k] || k)}</a>`);
   if (D.bibtex) links.push(`<a href="#cite">bibtex</a>`);
   document.title = title;
