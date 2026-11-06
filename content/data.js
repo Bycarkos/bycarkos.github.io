@@ -65,14 +65,14 @@ window.SITE = {
     },
     {
       title: "ICDAR 2026 Competition on Long-Term Handwriting Author Identification",
-      authors: ["A. M. Rodríguez", "Carlos Boned Riera", "P. Torras"],
+      authors: ["Adrià Molina Rodríguez", "Carlos Boned Riera", "Pau Torras", "Oriol Ramos Terrades", "Josep Lladós"],
       venue: "ICDAR",
       year: 2026,
       featured: false,
-      image: "",
-      summary: "Competition report on identifying the author of handwriting samples written years apart.",
+      image: "assets/img/anyscript.jpg",
+      summary: "The AnyScript benchmark: find manuscripts by the same writer across decades, over 1,019 authors, 2,286 books and 527,340 pages spanning 500 years. First two authors contributed equally.",
       page: "",
-      links: {},
+      links: { project: "https://cvc-dag.github.io/anyscript/", pdf: "assets/papers/anyscript_icdar2026.pdf" },
     },
     {
       title: "ODE-ViT: Plug & Play Attention Layer from the Generalization of the ViT as an Ordinary Differential Equation",
