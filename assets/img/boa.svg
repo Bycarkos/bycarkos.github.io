@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-14 -8 372 372" width="372" height="372">
+  <!-- Boa method diagram (after Fig. 1 of the paper), redrawn from the project page https://mserra0.github.io/boa-context-compression/ -->
+  <style>
+    .ln { fill: none; stroke: #1b1b1a; stroke-width: 1.5px; }
+    .hd { fill: #1b1b1a; }
+    .lbl { fill: #1b1b1a; font: 500 13px Inter, "Segoe UI", system-ui, sans-serif; text-anchor: middle; }
+    .sm { font-size: 12px; }
+    .math { fill: #1b1b1a; font: 16px "Source Serif 4", Georgia, serif; text-anchor: middle; }
+    .ctx { fill: #d9d9d9; stroke: #1b1b1a; }
+    .soft { fill: #c6e9e4; stroke: #02584c; }
+    .stu { fill: #e6d1fb; stroke: #1b1b1a; }
+    .tea { fill: #acd7ff; stroke: #1b1b1a; }
+    .op { fill: #eaf5ff; stroke: #0075e2; stroke-width: 1.5px; }
+    .llm { fill: #eaf5ff; stroke: #1b1b1a; stroke-width: 1.25px; }
+    .halo { fill: none; stroke: #fdfdfb; stroke-width: 4px; }
+    .snow { fill: none; stroke: #0075e2; stroke-width: 1.36px; }
+  </style>
+  <defs>
+    <pattern id="kv" patternUnits="userSpaceOnUse" width="12" height="12" patternTransform="rotate(55)">
+      <rect width="12" height="12" fill="#c6e9e4"/>
+      <line x1="0" y1="0" x2="0" y2="12" stroke="#5cada2" stroke-width="1.5"/>
+    </pattern>
+    <path id="flake" d="M0 0L0 -8M0 -4.4L2.15 -6.55M0 -4.4L-2.15 -6.55M0 0L-6.93 -4M-3.81 -2.2L-4.6 -5.14M-3.81 -2.2L-6.75 -1.41M0 0L-6.93 4M-3.81 2.2L-6.75 1.41M-3.81 2.2L-4.6 5.14M0 0L0 8M0 4.4L-2.15 6.55M0 4.4L2.15 6.55M0 0L6.93 4M3.81 2.2L4.6 5.14M3.81 2.2L6.75 1.41M0 0L6.93 -4M3.81 -2.2L6.75 -1.41M3.81 -2.2L4.6 -5.14"/>
+  </defs>
+  <rect x="-14" y="-8" width="372" height="372" fill="#fdfdfb"/>
+
+  <!-- context tokens -> Boa -->
+  <g>
+    <rect class="ctx" x="13.75" y="315" width="12" height="12" rx="2.16"/>
+    <rect class="ctx" x="31.25" y="315" width="12" height="12" rx="2.16"/>
+    <rect class="ctx" x="48.75" y="315" width="12" height="12" rx="2.16"/>
+    <rect class="ctx" x="66.25" y="315" width="12" height="12" rx="2.16"/>
+    <rect class="ctx" x="83.75" y="315" width="12" height="12" rx="2.16"/>
+    <rect class="ctx" x="101.25" y="315" width="12" height="12" rx="2.16"/>
+    <rect class="ctx" x="118.75" y="315" width="12" height="12" rx="2.16"/>
+    <rect class="ctx" x="136.25" y="315" width="12" height="12" rx="2.16"/>
+  </g>
+  <path class="ln" d="M154.25 321L177.4 321"/><path class="hd" d="M181 321L175 324L175 318Z"/>
+
+  <!-- Boa model (trained) -->
+  <rect x="186" y="150" width="152" height="202" rx="14" fill="none" stroke="#6f6f6f" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <g transform="translate(312.5 162.5) scale(0.79)">
+    <path fill="#ec6f59" d="M12 1.5C12.7 5 14.7 7.3 16.7 9.2C18.9 11.3 20 13.5 20 15.9C20 20.2 16.4 23 12 23C7.6 23 4 20.2 4 15.9C4 13.1 5.4 10.8 7.4 9.2C7.5 11.4 8.4 12.8 9.8 13.3C9.2 9.2 10.2 4.9 12 1.5Z"/>
+    <path fill="#fad15c" d="M12 12.6C13.2 14.9 15.6 16.3 15.6 18.9C15.6 20.9 14 22.3 12 22.3C10 22.3 8.4 20.9 8.4 18.9C8.4 16.7 10.6 15.3 12 12.6Z"/>
+  </g>
+  <rect x="196" y="300" width="132" height="42" rx="7" fill="#ceadf0" stroke="#1b1b1a" stroke-width="1.25"/>
+  <text class="lbl" x="262" y="325.9" font-size="14" style="font-size:14px">Mamba-2</text>
+
+  <!-- stride -->
+  <path class="ln" d="M262 298L262 293.6"/><path class="hd" d="M262 290L265 296L259 296Z"/>
+  <rect class="op" x="212" y="268" width="100" height="20" rx="10"/>
+  <text class="lbl sm" x="262" y="282.2">Stride op.</text>
+  <rect class="soft" x="235.5" y="246" width="13" height="13" rx="2.34"/>
+  <rect class="soft" x="255.5" y="246" width="13" height="13" rx="2.34"/>
+  <rect class="soft" x="275.5" y="246" width="13" height="13" rx="2.34"/>
+
+  <!-- K / V projections -> KV cache -->
+  <path class="ln" d="M262 243V236"/>
+  <path class="ln" d="M226 226.6V232Q226 236 230 236H294Q298 236 298 232V226.6"/>
+  <path class="hd" d="M226 223L229 229L223 229Z"/><path class="hd" d="M298 223L301 229L295 229Z"/>
+  <polygon class="op" points="194,222 203,200 249,200 258,222"/><text class="lbl sm" x="226" y="215.2">K proj</text>
+  <polygon class="op" points="266,222 275,200 321,200 330,222"/><text class="lbl sm" x="298" y="215.2">V proj</text>
+  <path class="ln" d="M226 200C226 180 239.75 180 247.4 180"/><path class="hd" d="M251 180L245 183L245 177Z"/>
+  <path class="ln" d="M298 200C298 180 284.25 180 276.6 180"/><path class="hd" d="M273 180L279 177L279 183Z"/>
+  <circle cx="262" cy="180" r="10" fill="#d9d9d9" stroke="#1b1b1a" stroke-width="1.5"/>
+  <path class="ln" d="M255 173L269 187M269 173L255 187"/>
+  <path class="ln" d="M262 170V170Q262 160 252 160H203Q193 160 193 150V145.6"/><path class="hd" d="M193 142L196 148L190 148Z"/>
+  <path d="M183 86H210V140H183A7 7 0 0 1 176 133V93A7 7 0 0 1 183 86Z" fill="url(#kv)" stroke="#02584c" stroke-width="1.5"/>
+
+  <!-- student: frozen LLM reading the KV cache -->
+  <path class="llm" d="M210 86H331A7 7 0 0 1 338 93V133A7 7 0 0 1 331 140H210"/>
+  <text class="lbl" x="274" y="109.75">Transformer</text><text class="lbl" x="274" y="125.35">LLM</text>
+  <g transform="translate(335 90)"><use href="#flake" class="halo"/><use href="#flake" class="snow"/></g>
+  <rect class="stu" x="222.5" y="60" width="15" height="15" rx="2.7"/>
+  <rect class="stu" x="244.5" y="60" width="15" height="15" rx="2.7"/>
+  <rect class="stu" x="266.5" y="60" width="15" height="15" rx="2.7"/>
+  <rect class="stu" x="288.5" y="60" width="15" height="15" rx="2.7"/>
+  <rect class="stu" x="310.5" y="60" width="15" height="15" rx="2.7"/>
+
+  <!-- teacher: frozen LLM reading the full context -->
+  <path class="ln" d="M81 309L81 145.6"/><path class="hd" d="M81 142L84 148L78 148Z"/>
+  <rect class="llm" x="4" y="86" width="154" height="54" rx="7"/>
+  <text class="lbl" x="81" y="109.75">Transformer</text><text class="lbl" x="81" y="125.35">LLM</text>
+  <g transform="translate(155 90)"><use href="#flake" class="halo"/><use href="#flake" class="snow"/></g>
+  <rect class="tea" x="29.5" y="60" width="15" height="15" rx="2.7"/>
+  <rect class="tea" x="51.5" y="60" width="15" height="15" rx="2.7"/>
+  <rect class="tea" x="73.5" y="60" width="15" height="15" rx="2.7"/>
+  <rect class="tea" x="95.5" y="60" width="15" height="15" rx="2.7"/>
+  <rect class="tea" x="117.5" y="60" width="15" height="15" rx="2.7"/>
+
+  <!-- distillation -->
+  <text class="math" x="81" y="50"><tspan font-style="italic">p</tspan><tspan dy="4.48" font-size="11.52">T</tspan><tspan dy="-4.48">(· | </tspan><tspan font-style="italic">x</tspan><tspan dy="4.48" font-size="11.52">&lt;</tspan><tspan font-size="11.52" font-style="italic">t</tspan><tspan dy="-4.48">, </tspan><tspan font-style="italic">c</tspan><tspan>)</tspan></text>
+  <text class="math" x="274" y="50"><tspan font-style="italic">p</tspan><tspan dy="4.48" font-size="11.52">S</tspan><tspan dy="-4.48">(· | </tspan><tspan font-style="italic">x</tspan><tspan dy="4.48" font-size="11.52">&lt;</tspan><tspan font-size="11.52" font-style="italic">t</tspan><tspan dy="-4.48">, </tspan><tspan font-style="italic">z</tspan><tspan>)</tspan></text>
+  <path class="ln" d="M81 34.8Q81 14 101.8 14H155.66"/><path class="hd" d="M159.26 14L153.26 17L153.26 11Z"/>
+  <path class="ln" d="M274 34.8Q274 14 253.2 14H199.34"/><path class="hd" d="M195.74 14L201.74 11L201.74 17Z"/>
+  <text class="math" x="177.5" y="19.95" style="font-size:17px;font-weight:700">KL</text>
+</svg>

@@ -58,10 +58,10 @@ window.SITE = {
       venue: "arXiv",
       year: 2026,
       featured: false,
-      image: "",
-      summary: "A Mamba encoder compresses long contexts in a single linear-time pass so a frozen language model can read them, at up to 16× compression.",
+      image: "assets/img/boa.svg",
+      summary: "Boa: a Mamba encoder compresses long contexts in a single linear-time pass so a frozen language model can read them, at up to 16× compression.",
       page: "",
-      links: { arxiv: "https://arxiv.org/abs/2610.33006" },
+      links: { project: "https://mserra0.github.io/boa-context-compression/", arxiv: "https://arxiv.org/abs/2610.33006" },
     },
     {
       title: "ICDAR 2026 Competition on Long-Term Handwriting Author Identification",
